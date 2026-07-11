@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bar Moshe · CV for Centrical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #211551;
+    --indigo-deep: #140b39;
+    --magenta: #e11c8e;
+    --violet: #5b3fd6;
+    --violet-text: #7b5ce5;
+    --lime: #c6d92d;
+    --lavender: #eeecfa;
+    --ink: #1a1a3e;
+    --body: #526068;
+    --display: 'DM Sans', sans-serif;
+    --ui: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: A4; margin: 0; }
+  html, body { width: 210mm; height: 297mm; }
+  body {
+    font-family: var(--display);
+    color: var(--body);
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 9.6pt;
+    line-height: 1.45;
+  }
+
+  /* ---------------------------------------------------------- header */
+  .head {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(rgba(255,255,255,.05) 1px, transparent 1.4px) 0 0 / 18px 18px,
+      radial-gradient(60% 90% at 88% 0%, #43289c 0%, transparent 62%),
+      radial-gradient(40% 70% at 4% 100%, #61176b 0%, transparent 55%),
+      linear-gradient(155deg, #2a1a63 0%, var(--indigo) 55%, var(--indigo-deep) 100%);
+    color: #fff;
+    padding: 24pt 28pt 20pt;
+  }
+  .head-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16pt; }
+  .name { font-size: 24pt; font-weight: 700; letter-spacing: -0.5pt; line-height: 1.1; }
+  .role {
+    font-family: var(--ui); font-size: 9.2pt; font-weight: 600;
+    color: #cbbdf6; letter-spacing: .14em; text-transform: uppercase; margin-top: 5pt;
+  }
+  .summary { margin-top: 9pt; max-width: 128mm; font-size: 9.8pt; color: rgba(238,236,250,.9); }
+  .mark { display: flex; align-items: center; gap: 7pt; }
+  .mark svg { display: block; }
+  .mark-word { font-weight: 700; font-size: 11pt; white-space: nowrap; }
+  .mark-word .for { font-weight: 400; opacity: .75; }
+  .contact-row {
+    display: flex; flex-wrap: wrap; gap: 6pt; margin-top: 12pt;
+    font-family: var(--ui); font-size: 8.2pt; font-weight: 600;
+  }
+  .contact-row > a, .contact-row > span {
+    color: #fff; text-decoration: none;
+    background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16);
+    border-radius: 100pt; padding: 4pt 9pt; display: inline-flex; align-items: center; gap: 5pt;
+  }
+  .contact-row .site {
+    background: var(--magenta); border-color: var(--magenta); font-weight: 700;
+  }
+  .contact-row .cvlime { background: var(--lime); border-color: var(--lime); color: #101010; }
+  .dot { width: 4pt; height: 4pt; border-radius: 50%; background: #f06ac0; display: inline-block; }
+
+  /* ------------------------------------------------------------ body */
+  .sheet { padding: 14pt 28pt 0; }
+  .cols { display: grid; grid-template-columns: 1.55fr 1fr; gap: 16pt; }
+
+  h2 {
+    font-family: var(--ui); font-size: 8pt; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--violet-text);
+    margin: 12pt 0 6pt;
+  }
+  h2:first-child { margin-top: 0; }
+
+  .item { margin-bottom: 8pt; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .item-title { font-size: 10.2pt; font-weight: 700; color: var(--ink); letter-spacing: -0.1pt; }
+  .item-meta { font-family: var(--ui); font-size: 7.8pt; font-weight: 600; color: var(--violet-text); white-space: nowrap; }
+  .item p { margin-top: 1.5pt; font-size: 9.1pt; }
+  .item a { color: var(--magenta); text-decoration: none; font-weight: 600; }
+
+  .hook {
+    background: var(--lavender); border-left: 3pt solid var(--violet);
+    border-radius: 6pt; padding: 8pt 10pt; margin-bottom: 10pt;
+    color: var(--ink); font-size: 9.4pt; font-weight: 500;
+  }
+  .hook b { color: var(--violet); }
+
+  .skills { display: flex; flex-direction: column; gap: 5pt; }
+  .skill-row { font-size: 8.9pt; }
+  .skill-row b {
+    font-family: var(--ui); font-size: 7.6pt; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink); display: block; margin-bottom: 1pt;
+  }
+
+  .pill-list { display: flex; flex-wrap: wrap; gap: 4pt; margin-top: 3pt; }
+  .pill-list span {
+    font-family: var(--ui); font-size: 7.6pt; font-weight: 600; color: var(--ink);
+    background: var(--lavender); border-radius: 100pt; padding: 2.5pt 7pt;
+  }
+
+  .foot {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    background: var(--indigo-deep); color: rgba(238,236,250,.75);
+    font-family: var(--ui); font-size: 7.6pt; font-weight: 500;
+    padding: 7pt 28pt; display: flex; justify-content: space-between; align-items: center;
+  }
+  .foot a { color: #fff; text-decoration: none; font-weight: 700; }
+  .foot .fdot { color: var(--magenta); }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-row">
+    <div>
+      <div class="name">Bar Moshe</div>
+      <div class="role">AI Focused Full Stack Developer &middot; Application to Centrical</div>
+      <p class="summary">
+        Full-stack engineer who ships AI products end to end: LLM apps, MCP servers,
+        agent tooling, and the TypeScript systems around them. Centrical just wired its
+        platform into Claude and ChatGPT over MCP; that surface is my daily work.
+      </p>
+    </div>
+    <div class="mark">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="6.5" r="3.1" fill="#8B5CF6"/>
+        <path d="M 8.9 24.9 A 9.5 9.5 0 0 1 7.2 13.4" stroke="#2BB673" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M 24.8 13.2 A 9.5 9.5 0 0 1 23.2 24.8" stroke="#C6D92D" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M 20.4 27.2 A 9.5 9.5 0 0 1 11.7 27.2" stroke="#E11C8E" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <div class="mark-word">bar<span class="for"> for </span>centrical</div>
+    </div>
+  </div>
+  <div class="contact-row">
+    <a class="site" href="https://bar-for-centrical.vercel.app">bar-for-centrical.vercel.app &#8594;</a>
+    <a href="mailto:1barmoshe1@gmail.com"><span class="dot"></span>1barmoshe1@gmail.com</a>
+    <a href="https://github.com/barmoshe"><span class="dot"></span>github.com/barmoshe</a>
+    <span><span class="dot"></span>+972 54-656-1465</span>
+    <span><span class="dot"></span>Tel Aviv, Israel</span>
+  </div>
+</header>
+
+<main class="sheet">
+  <div class="hook">
+    The pitch in one line: your June launch (three <b>MCP servers</b>, AI Role-Play
+    Simulations, a CLI on the roadmap) is the exact artifact list I build and publish.
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Experience</h2>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Software Developer &middot; Joomsy</span>
+          <span class="item-meta">2025 - present</span>
+        </div>
+        <p>Early-stage startup, team of five. Primary developer with full-stack and DevOps
+        ownership; significant responsibility across engineering and product.</p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">AI Builder &middot; Independent</span>
+          <span class="item-meta">2026 - present</span>
+        </div>
+        <p>Independent practice shipping MVPs from brief to deploy in hours-to-days:
+        web apps, landing pages, and a production video-rendering pipeline.</p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Customer Support Engineer &middot; Wochit</span>
+          <span class="item-meta">2021 - present</span>
+        </div>
+        <p>Technical support at scale for a cloud video editor; feeding real user failures
+        back into the product with the development teams.</p>
+      </div>
+
+      <h2>Selected work (all live, all openable)</h2>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">MDP</span>
+          <span class="item-meta">MCP server &middot; npm</span>
+        </div>
+        <p>A Markdown compiler built for AI agents to write into, shipped with its own MCP
+        server so Claude drives it directly. Zero-dependency Node engine.
+        <a href="https://barmoshe.github.io/mdp/">barmoshe.github.io/mdp</a></p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Entailer</span>
+          <span class="item-meta">LLM + evals &middot; npm</span>
+        </div>
+        <p>A logic linter: an LLM formalizes claims, a deterministic core validates them.
+        Built to kill false positives.
+        <a href="https://barmoshe.github.io/entailer/">barmoshe.github.io/entailer</a></p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Temporal Data Service</span>
+          <span class="item-meta">Featured by Temporal</span>
+        </div>
+        <p>Cross-language durable workflows: Go, Python, and TypeScript workers under one
+        orchestration, featured on Temporal's Code Exchange.</p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">bar for companies</span>
+          <span class="item-meta">Automation &middot; Next.js</span>
+        </div>
+        <p>A data-driven gallery of bespoke pitch sites, each rebuilt in a different
+        company's brand, with automated logo and screenshot pipelines.
+        <a href="https://bar-for-companies.vercel.app">bar-for-companies.vercel.app</a></p>
+      </div>
+    </div>
+
+    <div>
+      <h2>Mapped to your posting</h2>
+      <div class="skills">
+        <div class="skill-row"><b>LLM, hands-on</b>
+          Prompt design, orchestration, and evals in shipped products, on Anthropic and
+          OpenAI models.</div>
+        <div class="skill-row"><b>MCP &amp; agents</b>
+          MCP servers published to npm; Claude Code plugins and agent harnesses as
+          open source.</div>
+        <div class="skill-row"><b>Full stack TypeScript</b>
+          React + Node.js daily (the alternatives your posting names), REST APIs, SQL,
+          product-grade UI. C# from my degree.</div>
+        <div class="skill-row"><b>Cloud &amp; DevOps</b>
+          AWS, Docker, Kubernetes, Terraform (hands-on Wix workshop), GitHub Actions
+          CI/CD as routine.</div>
+      </div>
+
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-head"><span class="item-title">B.Sc. Computer Science</span></div>
+        <p>Afeka College of Engineering, 2020-2023. From low-level assembly up to .NET,
+        operating systems, data structures, algorithms.</p>
+      </div>
+      <div class="item">
+        <div class="item-head"><span class="item-title">DevOps Workshop &middot; Wix Tel Aviv</span></div>
+        <p>Amazon EKS, Kubernetes, Terraform, microservices; scalable cloud deploys.</p>
+      </div>
+      <div class="item">
+        <div class="item-head"><span class="item-title">Full-Stack Bootcamp &middot; Coding Academy</span></div>
+        <p>Intensive Node.js, React, MongoDB track for experienced coders.</p>
+      </div>
+
+      <h2>Toolbox</h2>
+      <div class="pill-list">
+        <span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Go</span><span>C#</span>
+        <span>React</span><span>Next.js</span><span>Node.js</span><span>REST</span><span>SQL</span>
+        <span>Claude</span><span>OpenAI</span><span>MCP</span><span>agents</span><span>evals</span>
+        <span>AWS</span><span>Docker</span><span>K8s</span><span>Terraform</span><span>CI/CD</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <span>This CV was designed in Centrical's brand for this application <span class="fdot">&#183;</span>
+  the live version is the site itself</span>
+  <a href="https://bar-for-centrical.vercel.app">bar-for-centrical.vercel.app</a>
+</footer>
+
+</body>
+</html>
