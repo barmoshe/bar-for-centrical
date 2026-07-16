@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import ScrollRestorer from "@/components/ScrollRestorer";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/inter";
@@ -34,6 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <body>
+        <Script
+          src="https://bar-for-companies.vercel.app/track.js"
+          data-bar-for-id="centrical"
+          strategy="afterInteractive"
+        />
         <ScrollRestorer />
         {children}
       </body>
